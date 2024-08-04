@@ -1,0 +1,60 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "mod-rw-realdeathless",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"EditorConfig.EditorConfig",
+				"bierner.github-markdown-preview",
+				"DavidAnson.vscode-markdownlint",
+				"redhat.vscode-xml",
+				"ms-dotnettools.csdevkit"
+			],
+			"settings": {
+				"files.associations": {
+					".verifiedSigners": "plaintext"
+				},
+				"redhat.telemetry.enabled": false,
+				"xml.format.maxLineWidth": 0,
+				"xml.format.preserveSpace": [
+					"xsl:text",
+					"xsl:comment",
+					"xsl:processing-instruction",
+					"literallayout",
+					"programlisting",
+					"screen",
+					"synopsis",
+					"pre",
+					"xd:pre",
+					"descriptionsByVersion"
+				],
+				"dotnetAcquisitionExtension.existingDotnetPath": [
+					{
+						"extensionId": "ms-dotnettools.csharp",
+						"path": "/usr/bin/dotnet/dotnet"
+					},
+					{
+						"extensionId": "ms-dotnettools.csdevkit",
+						"path": "/usr/bin/dotnet/dotnet"
+					}
+				]
+			}
+		}
+	},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+	// Environment Variables
+	"containerEnv": {
+		"TZ": "Asia/Singapore"
+	}
+}
